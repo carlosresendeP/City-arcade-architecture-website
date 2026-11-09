@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CITY ARCADE — O Futuro de Viver &amp; Imóveis de Vanguarda</title>
+  <meta name="description" content="Encontre a residência dos seus sonhos, explore propriedades arquitetônicas de alto padrão e invista com confiança pela City Arcade, sua parceira no mercado imobiliário moderno." />
+
+  <!-- Google Fonts: Space Grotesk (Display & Geometric Headings) + Inter (Micro-copy) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Subtle Ambient Cursor Follower -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- =====================================================
+       FIXED HEADER / NAVIGATION BAR
+       Transparent at top -> Blurred glass when scroll > 80px
+       ===================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <!-- Geometric House Monogram Logo -->
+      <a href="#inicio" class="brand-logo" aria-label="City Arcade Início">
+        <svg width="26" height="26" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 3.2L4 12.2V24.5H17.5V17.5H24V24.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
+          <path d="M17.5 24.5H24V12.2L14 3.2" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
+        </svg>
+      </a>
+
+      <!-- Center Navigation with '+' Separators -->
+      <nav class="main-nav" aria-label="Navegação Principal">
+        <a href="#inicio" class="nav-link is-active">INÍCIO</a>
+        <span class="nav-plus" aria-hidden="true">+</span>
+        <a href="#imoveis" class="nav-link">IMÓVEIS</a>
+        <span class="nav-plus" aria-hidden="true">+</span>
+        <a href="#comprar" class="nav-link">COMPRAR</a>
+        <span class="nav-plus" aria-hidden="true">+</span>
+        <a href="#alugar" class="nav-link">ALUGAR</a>
+        <span class="nav-plus" aria-hidden="true">+</span>
+        <a href="#corretores" class="nav-link">ENCONTRAR CORRETOR</a>
+        <span class="nav-plus" aria-hidden="true">+</span>
+        <a href="#contato" class="nav-link">CONTATO</a>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="header-actions">
+        <button type="button" class="btn-search" id="openSearchBtn" aria-label="Buscar Imóveis">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
+          </svg>
+        </button>
+
+        <button type="button" class="btn-signin" id="openSignInBtn">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>ENTRAR</span>
+        </button>
+
+        <button type="button" class="btn-mobile-menu" id="mobileMenuBtn" aria-label="Abrir Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <nav class="mobile-nav-links">
+        <a href="#inicio" class="mobile-nav-link is-active">INÍCIO</a>
+        <a href="#imoveis" class="mobile-nav-link">IMÓVEIS</a>
+        <a href="#comprar" class="mobile-nav-link">COMPRAR</a>
+        <a href="#alugar" class="mobile-nav-link">ALUGAR</a>
+        <a href="#corretores" class="mobile-nav-link">ENCONTRAR CORRETOR</a>
+        <a href="#contato" class="mobile-nav-link">CONTATO</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Page Wrapper -->
+  <div class="page-shell" id="smooth-wrapper">
+    <main class="page-canvas" id="smooth-content">
+
+      <!-- =====================================================
+           HERO SECTION
+           ===================================================== -->
+      <section class="hero-section" id="inicio">
+        <div class="hero-top-grid">
+
+          <!-- Left Agency Badge & Intro Copy -->
+          <div class="hero-left-col" data-reveal="fade-up">
+            <div class="agency-pill">MELHOR AGÊNCIA IMOBILIÁRIA</div>
+            <p class="hero-description">
+              ENCONTRE A CASA DOS SEUS SONHOS, EXPLORE IMÓVEIS DE ALTO PADRÃO E INVISTA COM CONFIANÇA PELA CITY ARCADE, SUA PARCEIRA DE CONFIANÇA NO MERCADO IMOBILIÁRIO MODERNO.
+            </p>
+          </div>
+
+          <!-- Center Staggered Display Typography -->
+          <h1 class="hero-display-title" aria-label="CITY ARCADE">
+            <span class="hero-word hero-word-city" id="heroWordCity">
+              <span class="char-wrap"><span class="char">C</span></span><span class="char-wrap"><span class="char">I</span></span><span class="char-wrap"><span class="char">T</span></span><span class="char-wrap"><span class="char">Y</span></span>
+            </span>
+            <span class="hero-word hero-word-arcade" id="heroWordArcade">
+              <span class="char-wrap"><span class="char">A</span></span><span class="char-wrap"><span class="char">R</span></span><span class="char-wrap"><span class="char">C</span></span><span class="char-wrap"><span class="char">A</span></span><span class="char-wrap"><span class="char">D</span></span><span class="char-wrap"><span class="char">E</span></span>
+            </span>
+          </h1>
+
+          <!-- Right KPI Statistics -->
+          <div class="hero-stats-col" aria-label="Indicadores da Agência">
+            <div class="stat-block" data-reveal="stat">
+              <div class="stat-value"><span class="stat-counter" data-target="10">10</span>K</div>
+              <div class="stat-caption">CLIENTES SATISFEITOS</div>
+            </div>
+            <div class="stat-block" data-reveal="stat">
+              <div class="stat-value"><span class="stat-counter" data-target="5">5</span>K</div>
+              <div class="stat-caption">IMÓVEIS VENDIDOS</div>
+            </div>
+            <div class="stat-block" data-reveal="stat">
+              <div class="stat-value"><span class="stat-counter" data-target="15">15</span>+</div>
+              <div class="stat-caption">CIDADES ATENDIDAS</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero 3D Pop-Out Architectural Stage -->
+        <div class="hero-stage-wrapper" id="heroStage">
+          <!-- Synchronized Aspect-Ratio Coordinate Container -->
+          <div class="hero-scene-box" id="heroSceneBox">
+
+            <!-- Layer 1: Rounded Rectangular Frame Clipping the Lower Image -->
+            <div class="hero-card-frame" id="heroCardFrame">
+              <div class="hero-image-parallax" id="heroParallaxInner">
+                <img
+                  src="assets/hero-perspective.jpg"
+                  alt="Residência modular futurista em vidro e aço cromado com segundo pavimento em balanço e esportivo preto em movimento"
+                  class="hero-base-img"
+                  id="heroBaseImg"
+                  draggable="false"
+                />
+                <!-- Subtle Living Architectural Light & Motion Streak Canvas -->
+                <canvas class="hero-ambient-canvas" id="heroAmbientCanvas" aria-hidden="true"></canvas>
+                <div class="hero-vignette" aria-hidden="true"></div>
+              </div>
+
+              <!-- Bottom-Left Caption Inside Frame -->
+              <div class="hero-frame-caption">
+                <span>O FUTURO DE VIVER</span>
+                <span>COM A CITY ARCADE</span>
+              </div>
+
+              <!-- Subtle Interactive View Switcher Pill (Bottom Right) -->
+              <button type="button" class="hero-angle-toggle" id="heroAngleToggle" title="Alternar Perspectiva Arquitetônica">
+                <span class="pulse-dot"></span>
+                <span class="toggle-text">PERSPECTIVA AO VIVO</span>
+              </button>
+            </div>
+
+            <!-- Layer 2: Protruding 3D Architectural Roof Cutout (Overlaps 'ARCADE' Text) -->
+            <div class="hero-roof-popout" id="heroRoofPopout" aria-hidden="true">
+              <img
+                src="assets/hero-popout.png"
+                alt=""
+                class="hero-popout-img"
+                id="heroPopoutImg"
+                draggable="false"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           MANIFESTO / EDITORIAL STATEMENT SECTION
+           ===================================================== -->
+      <section class="manifesto-section" aria-label="Manifesto da Plataforma">
+        <div class="manifesto-container">
+          <p class="manifesto-text">
+            <span class="manifesto-line line-1 dark-ink" data-scrub-line="1">UMA PLATAFORMA IMOBILIÁRIA MODERNA,</span>
+            <span class="manifesto-line line-2 dark-ink" data-scrub-line="2">A CITY ARCADE INCORPORA</span>
+            <span class="manifesto-line line-3 muted-ink" data-scrub-line="3">FERRAMENTAS DIGITAIS AVANÇADAS E</span>
+            <span class="manifesto-line line-4 muted-ink" data-scrub-line="4">CONFIÁVEL</span>
+            <span class="manifesto-line line-5 muted-ink" data-scrub-line="5">EXPERTISE LOCAL</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           FEATURES & MONOCHROME ARCHITECTURE SPLIT SECTION
+           ===================================================== -->
+      <section class="features-section" id="comprar" aria-label="Recursos da Plataforma">
+        <div class="features-grid">
+
+          <!-- Left Column: 4 Interactive Feature Cards -->
+          <div class="features-cards-col" role="list">
+
+            <!-- Card 1 -->
+            <article
+              class="feature-card"
+              role="listitem"
+              tabindex="0"
+              data-feature-index="0"
+              data-img="assets/feature-monochrome.jpg"
+              data-tag="01 / MOTOR DE BUSCA INSTANTÂNEA"
+              data-location="JARDINS · PAVILHÃO MODULAR IV"
+            >
+              <div class="feature-card-top">
+                <h2 class="feature-title">
+                  <span>BUSCA RÁPIDA</span>
+                  <span>DE IMÓVEIS</span>
+                </h2>
+              </div>
+              <div class="feature-card-bottom">
+                <p class="feature-desc">
+                  <span>DESCUBRA CASAS E APARTAMENTOS</span>
+                  <span>COM APENAS ALGUNS CLIQUES</span>
+                </p>
+                <span class="feature-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="8 7 17 7 17 16"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 2 (Default Active Dark State matching reference) -->
+            <article
+              class="feature-card is-active"
+              role="listitem"
+              tabindex="0"
+              data-feature-index="1"
+              data-img="assets/feature-monochrome.jpg"
+              data-tag="02 / ARQUITETURA 100% AUDITADA"
+              data-location="JOÁ · RESIDÊNCIA CANTILEVER EM VIDRO"
+            >
+              <div class="feature-card-top">
+                <h2 class="feature-title">
+                  <span>IMÓVEIS PRO</span>
+                  <span>VERIFICADOS</span>
+                </h2>
+              </div>
+              <div class="feature-card-bottom">
+                <p class="feature-desc">
+                  <span>DETALHES DE IMÓVEIS 100% VERIFICADOS</span>
+                  <span>E ATUALIZADOS</span>
+                </p>
+                <span class="feature-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="8 7 17 7 17 16"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article
+              class="feature-card"
+              role="listitem"
+              tabindex="0"
+              data-feature-index="2"
+              data-img="assets/hero-architecture.jpg"
+              data-tag="03 / IA DE AVALIAÇÃO &amp; RENTABILIDADE"
+              data-location="LAGOA · VILLA SKYLINE POD"
+            >
+              <div class="feature-card-top">
+                <h2 class="feature-title">
+                  <span>INSIGHTS DE</span>
+                  <span>INVESTIMENTO</span>
+                </h2>
+              </div>
+              <div class="feature-card-bottom">
+                <p class="feature-desc">
+                  <span>RECOMENDAÇÕES PERSONALIZADAS PARA</span>
+                  <span>MULTIPLICAR SEU PATRIMÔNIO</span>
+                </p>
+                <span class="feature-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="8 7 17 7 17 16"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article
+              class="feature-card"
+              role="listitem"
+              tabindex="0"
+              data-feature-index="3"
+              data-img="assets/hero-perspective.jpg"
+              data-tag="04 / MONITORAMENTO DE MERCADO AO VIVO"
+              data-location="ITAIM BIBI · CHROME ATRIUM HOUSE"
+            >
+              <div class="feature-card-top">
+                <h2 class="feature-title">
+                  <span>ATUALIZAÇÕES</span>
+                  <span>EM TEMPO REAL</span>
+                </h2>
+              </div>
+              <div class="feature-card-bottom">
+                <p class="feature-desc">
+                  <span>RECEBA ALERTAS INSTANTÂNEOS DE NOVOS</span>
+                  <span>ANÚNCIOS E MUDANÇAS DE PREÇO</span>
+                </p>
+                <span class="feature-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="8 7 17 7 17 16"></polyline>
+                  </svg>
+                </span>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Right Column: Tall Monochrome Architectural Visual Card -->
+          <div class="features-visual-col">
+            <div class="features-showcase-frame" id="featureShowcaseFrame">
+              <div class="features-img-parallax" id="featureImgParallax">
+                <img
+                  src="assets/feature-monochrome.jpg"
+                  alt="Fotografia arquitetônica monocromática de residência modular em vidro com veículo esportivo em movimento"
+                  class="features-showcase-img is-mirrored"
+                  id="featureShowcaseImg"
+                  draggable="false"
+                />
+              </div>
+
+              <!-- Subtle Architectural Telemetry HUD Overlay on Hover -->
+              <div class="feature-hud-overlay" id="featureHudOverlay">
+                <span class="hud-tag" id="featureHudTag">02 / ARQUITETURA 100% AUDITADA</span>
+                <span class="hud-location" id="featureHudLocation">JOÁ · RESIDÊNCIA CANTILEVER EM VIDRO</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           SHOWCASE BANNER ("POR QUE CITYARCEDE?")
+           ===================================================== -->
+      <section class="why-section" aria-label="Por que escolher a City Arcade">
+        <div class="why-banner-card" id="whyBannerCard">
+
+          <!-- Left Architectural Cutout Emerging from Bottom-Left -->
+          <div class="why-architecture-wrap" id="whyArchWrap">
+            <img
+              src="assets/why-cutout.png"
+              alt="Perspectiva arquitetônica dos módulos de vidro e aço cromado"
+              class="why-arch-img"
+              draggable="false"
+            />
+          </div>
+
+          <!-- Bottom-Center Caption -->
+          <div class="why-center-note">
+            <span>FIQUE ATUALIZADO COM AVALIAÇÕES</span>
+            <span>E TENDÊNCIAS DE IMÓVEIS</span>
+          </div>
+
+          <!-- Right Heading & Pill Button -->
+          <div class="why-right-content">
+            <h2 class="why-heading">
+              <span>POR QUE</span>
+              <span>CITYARCEDE?</span>
+            </h2>
+            <a href="#imoveis" class="why-pill-btn" id="whyChooseBtn">
+              <span>POR QUE NOS ESCOLHER</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           NOVA SEÇÃO 1: ACERVO ARQUITETÔNICO DE PROPRIEDADES (#imoveis)
+           ===================================================== -->
+      <section class="portfolio-section" id="imoveis" aria-label="Acervo de Imóveis Exclusivos">
+        <div class="section-header-row">
+          <div class="section-header-left">
+            <span class="agency-pill">ACERVO SELECIONADO · 2026</span>
+            <h2 class="section-display-title">
+              <span>PROPRIEDADES</span>
+              <span class="indent-line">DE VANGUARDA</span>
+            </h2>
+          </div>
+
+          <!-- Filter Pills -->
+          <div class="portfolio-filters" role="tablist" aria-label="Filtrar imóveis por modalidade">
+            <button type="button" class="filter-pill is-active" data-filter="todos" role="tab" aria-selected="true">TODOS (04)</button>
+            <button type="button" class="filter-pill" data-filter="comprar" role="tab" aria-selected="false">COMPRAR</button>
+            <button type="button" class="filter-pill" data-filter="alugar" role="tab" aria-selected="false">ALUGAR</button>
+            <button type="button" class="filter-pill" data-filter="exclusivo" role="tab" aria-selected="false">OFF-MARKET</button>
+          </div>
+        </div>
+
+        <!-- Asymmetric Architectural Property Bento Grid -->
+        <div class="portfolio-bento-grid" id="portfolioGrid">
+
+          <!-- Property 1: Featured Wide Residence -->
+          <article class="property-card property-card-wide" data-category="comprar exclusivo">
+            <div class="property-media-wrap">
+              <img
+                src="assets/property-twilight-villa.jpg"
+                alt="Villa Cantilever Espelho D'Água ao entardecer com iluminação arquitetônica"
+                class="property-img"
+              />
+              <div class="property-badges">
+                <span class="prop-tag prop-tag-dark">EXCLUSIVO · VENDA</span>
+                <span class="prop-tag prop-tag-glass">ENTREGA IMEDIATA</span>
+              </div>
+              <div class="property-price-Overlay">R$ 28.500.000</div>
+            </div>
+            <div class="property-meta-bar">
+              <div class="property-meta-left">
+                <span class="property-location">JARDIM EUROPA · SÃO PAULO, SP</span>
+                <h3 class="property-name">VILLA CANTILEVER ESPELHO D'ÁGUA</h3>
+                <p class="property-specs">780 M² · 5 SUÍTES · PISCINA INFINITA AQUECIDA · 6 VAGAS SUBTERRÂNEAS</p>
+              </div>
+              <button
+                type="button"
+                class="property-action-btn"
+                data-prop-title="VILLA CANTILEVER ESPELHO D'ÁGUA"
+                data-prop-price="R$ 28.500.000"
+                data-prop-loc="JARDIM EUROPA · SÃO PAULO, SP"
+                data-prop-specs="780 M² · 5 SUÍTES · ESTRUTURA EM AÇO CROMADO E VIDRO DUPLO TERMOACÚSTICO"
+                aria-label="Ver dossiê da Villa Cantilever"
+              >
+                <span>DOSSIÊ</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="8 7 17 7 17 16"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Property 2 -->
+          <article class="property-card" data-category="comprar">
+            <div class="property-media-wrap">
+              <img
+                src="assets/hero-architecture.jpg"
+                alt="Pavilhão Modular Horizon com fachada de vidro curvo"
+                class="property-img"
+              />
+              <div class="property-badges">
+                <span class="prop-tag prop-tag-dark">COMPRAR</span>
+              </div>
+              <div class="property-price-Overlay">R$ 19.400.000</div>
+            </div>
+            <div class="property-meta-bar">
+              <div class="property-meta-left">
+                <span class="property-location">JOÁ · RIO DE JANEIRO, RJ</span>
+                <h3 class="property-name">PAVILHÃO MODULAR HORIZON</h3>
+                <p class="property-specs">610 M² · 4 SUÍTES · BALANÇO ESTRUTURAL DE 8M</p>
+              </div>
+              <button
+                type="button"
+                class="property-action-btn"
+                data-prop-title="PAVILHÃO MODULAR HORIZON"
+                data-prop-price="R$ 19.400.000"
+                data-prop-loc="JOÁ · RIO DE JANEIRO, RJ"
+                data-prop-specs="610 M² · 4 SUÍTES · VISTA DEFINITIVA PARA O OCEANO"
+                aria-label="Ver dossiê do Pavilhão Modular Horizon"
+              >
+                <span>DOSSIÊ</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="8 7 17 7 17 16"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Property 3 -->
+          <article class="property-card" data-category="alugar">
+            <div class="property-media-wrap">
+              <img
+                src="assets/interior-glass-atrium.jpg"
+                alt="Átrio Panorâmico Travertino com pé-direito duplo e vidro curvo"
+                class="property-img"
+              />
+              <div class="property-badges">
+                <span class="prop-tag prop-tag-blue">LOCAÇÃO PRIVATE</span>
+              </div>
+              <div class="property-price-Overlay">R$ 125.000 / MÊS</div>
+            </div>
+            <div class="property-meta-bar">
+              <div class="property-meta-left">
+                <span class="property-location">ITAIM BIBI · SÃO PAULO, SP</span>
+                <h3 class="property-name">ÁTRIO PANORÂMICO TRAVERTINO</h3>
+                <p class="property-specs">540 M² · 4 SUÍTES · MOBILIÁRIO ASSINADO · CONCIERGE 24H</p>
+              </div>
+              <button
+                type="button"
+                class="property-action-btn"
+                data-prop-title="ÁTRIO PANORÂMICO TRAVERTINO"
+                data-prop-price="R$ 125.000 / MÊS"
+                data-prop-loc="ITAIM BIBI · SÃO PAULO, SP"
+                data-prop-specs="540 M² · 4 SUÍTES · TOTALMENTE MOBILIADO · PÉ-DIREITO DUPLO"
+                aria-label="Ver dossiê do Átrio Panorâmico Travertino"
+              >
+                <span>DOSSIÊ</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="8 7 17 7 17 16"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Property 4 -->
+          <article class="property-card property-card-wide" data-category="comprar alugar exclusivo">
+            <div class="property-media-wrap">
+              <img
+                src="assets/hero-perspective.jpg"
+                alt="Residência Cromo &amp; Vidro Duplo em esquina arquitetônica"
+                class="property-img"
+              />
+              <div class="property-badges">
+                <span class="prop-tag prop-tag-dark">VENDA OU LOCAÇÃO ANUAL</span>
+                <span class="prop-tag prop-tag-glass">CERTIFICAÇÃO LEED PLATINUM</span>
+              </div>
+              <div class="property-price-Overlay">R$ 22.900.000</div>
+            </div>
+            <div class="property-meta-bar">
+              <div class="property-meta-left">
+                <span class="property-location">JURERE INTERNACIONAL · FLORIANÓPOLIS, SC</span>
+                <h3 class="property-name">RESIDÊNCIA MONOLÍTICA ARCADE ONE</h3>
+                <p class="property-specs">710 M² · 4 SUÍTES MASTER · AUTOMAÇÃO BIOMÉTRICA · GALERIA DE ARTE</p>
+              </div>
+              <button
+                type="button"
+                class="property-action-btn"
+                data-prop-title="RESIDÊNCIA MONOLÍTICA ARCADE ONE"
+                data-prop-price="R$ 22.900.000"
+                data-prop-loc="JURERÊ INTERNACIONAL · FLORIANÓPOLIS, SC"
+                data-prop-specs="710 M² · 4 SUÍTES MASTER · ARQUITETURA MODULAR ICÔNICA"
+                aria-label="Ver dossiê da Residência Monolítica Arcade One"
+              >
+                <span>DOSSIÊ</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="8 7 17 7 17 16"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           NOVA SEÇÃO 2: INTELIGÊNCIA PATRIMONIAL & SIMULADOR (#alugar)
+           ===================================================== -->
+      <section class="intelligence-section" id="alugar" aria-label="Inteligência Patrimonial e Simulador de Investimento">
+        <div class="intelligence-grid">
+
+          <!-- Left Column: Methodology & Architectural Process -->
+          <div class="intel-left-col">
+            <span class="agency-pill">ENGENHARIA DE INVESTIMENTO</span>
+            <h2 class="section-display-title">
+              <span>PRECISÃO DIGITAL</span>
+              <span class="indent-line">EM CADA METRO</span>
+            </h2>
+            <p class="intel-lead">
+              COMBINAMOS MODELAGEM BIM 3D, AUDITORIA JURÍDICA AUTOMATIZADA E ALGORITMOS PREDITIVOS DE VALORIZAÇÃO PARA TRANSFORMAR AQUISIÇÕES IMOBILIÁRIAS EM ATIVOS DE ALTA PERFORMANCE.
+            </p>
+
+            <div class="process-steps-list">
+              <div class="process-step-item">
+                <div class="step-index">01</div>
+                <div class="step-body">
+                  <h3 class="step-title">GÊMEO DIGITAL &amp; LAUDO ACÚSTICO/SOLAR</h3>
+                  <p class="step-text">INSPEÇÃO TRIDIMENSIONAL COMPLETA DA INCIDÊNCIA SOLAR, EFICIÊNCIA TÉRMICA DOS PAINÉIS DE VIDRO E INTEGRIDADE ESTRUTURAL ANTES DA VISITA.</p>
+                </div>
+              </div>
+
+              <div class="process-step-item">
+                <div class="step-index">02</div>
+                <div class="step-body">
+                  <h3 class="step-title">PRECIFICAÇÃO ALGORÍTMICA EM TEMPO REAL</h3>
+                  <p class="step-text">CRUZAMENTO DE TRANSAÇÕES REAIS, LIQUIDEZ POR MICRORREGIÃO E FLUXO DE CAPITAL PARA GARANTIR AQUISIÇÃO ABAIXO DO VALOR INTRÍNSECO.</p>
+                </div>
+              </div>
+
+              <div class="process-step-item">
+                <div class="step-index">03</div>
+                <div class="step-body">
+                  <h3 class="step-title">GESTÃO DE LOCAÇÃO PRIVATE &amp; YIELD</h3>
+                  <p class="step-text">ADMINISTRAÇÃO PATRIMONIAL COMPLETA PARA INVESTIDORES QUE BUSCAM RENDA PASSIVA EM CONTRATOS CORPORATIVOS E DIPLOMÁTICOS DE ALTO PADRÃO.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive ROI & Valuation Simulator Card -->
+          <div class="intel-right-col">
+            <div class="simulator-card">
+              <div class="simulator-top-bar">
+                <span class="sim-kicker">SIMULADOR DE PATRIMÔNIO CITY ARCADE</span>
+                <span class="sim-live-badge"><span class="pulse-dot"></span> ÍNDICE 2026 ATIVO</span>
+              </div>
+
+              <div class="simulator-preview-banner">
+                <img src="assets/interior-glass-atrium.jpg" alt="Interior arquitetônico em vidro e travertino" class="sim-bg-img" loading="lazy" />
+                <div class="sim-preview-overlay">
+                  <span class="sim-preview-label">TAXA MÉDIA HISTÓRICA (PORTFÓLIO MODULAR)</span>
+                  <strong class="sim-preview-rate">+14,6% a.a.</strong>
+                </div>
+              </div>
+
+              <div class="simulator-controls">
+                <!-- Control 1: Property Investment Value -->
+                <div class="sim-control-group">
+                  <div class="sim-label-row">
+                    <label for="simValueRange">VALOR DO ATIVO IMOBILIÁRIO</label>
+                    <output id="simValueOutput" class="sim-output-val">R$ 15.000.000</output>
+                  </div>
+                  <input
+                    type="range"
+                    id="simValueRange"
+                    class="sim-range-slider"
+                    min="5"
+                    max="50"
+                    step="1"
+                    value="15"
+                  />
+                  <div class="sim-range-Scale">
+                    <span>R$ 5M</span>
+                    <span>R$ 25M</span>
+                    <span>R$ 50M</span>
+                  </div>
+                </div>
+
+                <!-- Control 2: Investment Horizon -->
+                <div class="sim-control-group">
+                  <div class="sim-label-row">
+                    <label for="simYearsRange">HORIZONTE DE VALORIZAÇÃO</label>
+                    <output id="simYearsOutput" class="sim-output-val">5 ANOS</output>
+                  </div>
+                  <input
+                    type="range"
+                    id="simYearsRange"
+                    class="sim-range-slider"
+                    min="1"
+                    max="10"
+                    step="1"
+                    value="5"
+                  />
+                  <div class="sim-range-Scale">
+                    <span>1 ANO</span>
+                    <span>5 ANOS</span>
+                    <span>10 ANOS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Calculated Output Metrics -->
+              <div class="simulator-results-grid">
+                <div class="sim-result-box">
+                  <span class="sim-res-label">PATRIMÔNIO PROJETADO</span>
+                  <strong class="sim-res-number" id="simProjectedTotal">R$ 29.670.000</strong>
+                </div>
+                <div class="sim-result-box">
+                  <span class="sim-res-label"> RENDA DE LOCAÇÃO ESTIMADA</span>
+                  <strong class="sim-res-number accent" id="simMonthlyYield">R$ 92.500 / mês</strong>
+                </div>
+              </div>
+
+              <a href="#contato" class="sim-cta-btn">
+                <span>SOLICITAR ESTUDO DE VIABILIDADE PERSONALIZADO</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="8 7 17 7 17 16"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =====================================================
+           NOVA SEÇÃO 3: PRIVATE ADVISORS & AGENDAMENTO (#corretores / #contato)
+           ===================================================== -->
+      <section class="concierge-section" id="corretores" aria-label="Consultores Exclusivos e Agendamento">
+        <div class="concierge-wrapper" id="contato">
+
+          <!-- Left Column: Curated Architecture Specialists -->
+          <div class="advisors-col">
+            <span class="agency-pill">DIRETORIA PRIVATE DESK</span>
+            <h2 class="section-display-title">
+              <span>ESPECIALISTAS</span>
+              <span class="indent-line">EM ARQUITETURA</span>
+            </h2>
+            <p class="advisors-desc">
+              NOSSOS CONSULTORES SÃO ARQUITETOS E ESTRATEGISTAS PATRIMONIAIS DEDICADOS A ATENDER COM ABSOLUTA DISCRIÇÃO E AGILIDADE NAS PRINCIPAIS CAPITAIS.
+            </p>
+
+            <div class="advisors-list">
+              <!-- Advisor 1 -->
+              <div class="advisor-item">
+                <div class="advisor-avatar">HV</div>
+                <div class="advisor-info">
+                  <h3 class="advisor-name">HENRIQUE VASCONCELOS</h3>
+                  <span class="advisor-role">SÓCIO-DIRETOR · ARQUITETURA MODULAR &amp; OFF-MARKET (SP / MIAMI)</span>
+                </div>
+                <button type="button" class="advisor-contact-pill" data-advisor="Henrique Vasconcelos">CONECTAR ↗</button>
+              </div>
+
+              <!-- Advisor 2 -->
+              <div class="advisor-item">
+                <div class="advisor-avatar">CL</div>
+                <div class="advisor-info">
+                  <h3 class="advisor-name">CLARA LOMBARDI</h3>
+                  <span class="advisor-role">HEAD DE PROPRIEDADES COSTEIRAS &amp; DESIGN ASSINADO (RJ / SC)</span>
+                </div>
+                <button type="button" class="advisor-contact-pill" data-advisor="Clara Lombardi">CONECTAR ↗</button>
+              </div>
+
+              <!-- Advisor 3 -->
+              <div class="advisor-item">
+                <div class="advisor-avatar">RM</div>
+                <div class="advisor-info">
+                  <h3 class="advisor-name">RAFAEL MONTEIRO</h3>
+                  <span class="advisor-role">ESTRUTURAÇÃO DE FUNDOS FAMILIARES &amp; RENDA IMOBILIÁRIA</span>
+                </div>
+                <button type="button" class="advisor-contact-pill" data-advisor="Rafael Monteiro">CONECTAR ↗</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Private Tour & Consultation Form Card -->
+          <div class="booking-col">
+            <div class="booking-card">
+              <div class="booking-card-header">
+                <span class="booking-kicker">AGENDAMENTO DE EXPERIÊNCIA PRIVADA</span>
+                <h3 class="booking-title">AGENDE UMA VISITA OU REUNIÃO CONFIDENCIAL</h3>
+              </div>
+
+              <form class="booking-form" id="privateBookingForm">
+                <!-- Modality Selector -->
+                <div class="modality-selector" role="radiogroup" aria-label="Modalidade de Visita">
+                  <label class="modality-option">
+                    <input type="radio" name="modalidade" value="Visita Presencial Privada" checked />
+                    <span>VISITA PRESENCIAL</span>
+                  </label>
+                  <label class="modality-option">
+                    <input type="radio" name="modalidade" value="Imersão 3D ao Vivo" />
+                    <span>TOUR 3D AO VIVO</span>
+                  </label>
+                  <label class="modality-option">
+                    <input type="radio" name="modalidade" value="Acesso via Heliponto" />
+                    <span>HELIPONTO / AÉREO</span>
+                  </label>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-field">
+                    <label for="clientName">NOME COMPLETO</label>
+                    <input type="text" id="clientName" name="clientName" placeholder="Ex.: Dr. Marcelo Almeida" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="clientPhone">TELEFONE / WHATSAPP PRIVATE</label>
+                    <input type="tel" id="clientPhone" name="clientPhone" placeholder="+55 (11) 99000-0000" required />
+                  </div>
+                </div>
+
+                <div class="form-row-2">
+                  <div class="form-field">
+                    <label for="clientEmail">E-MAIL CORPORATIVO OU PESSOAL</label>
+                    <input type="email" id="clientEmail" name="clientEmail" placeholder="nome@dominio.com.br" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="clientCity">CIDADE DE INTERESSE</label>
+                    <select id="clientCity" name="clientCity">
+                      <option value="São Paulo — Jardins / Itaim">SÃO PAULO — JARDINS / ITAIM</option>
+                      <option value="Rio de Janeiro — Joá / Leblon">RIO DE JANEIRO — JOÁ / LEBLON</option>
+                      <option value="Florianópolis — Jurerê Internacional">FLORIANÓPOLIS — JURERÊ</option>
+                      <option value="Curitiba — Batel / Ecoville">CURITIBA — BATEL / ECOVILLE</option>
+                      <option value="Portfólio Internacional">PORTFÓLIO INTERNACIONAL</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="clientNotes">PREFERÊNCIAS ARQUITETÔNICAS OU OBSERVAÇÕES</label>
+                  <textarea id="clientNotes" name="clientNotes" rows="2" placeholder="Informe metragem desejada, número de suítes ou imóvel específico..."></textarea>
+                </div>
+
+                <button type="submit" class="booking-submit-btn" id="bookingSubmitBtn">
+                  <span>CONFIRMAR SOLICITAÇÃO COM PRIVATE DESK</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="8 7 17 7 17 16"></polyline>
+                  </svg>
+                </button>
+                <p class="booking-feedback" id="bookingFeedback" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- =====================================================
+         EDITORIAL ARCHITECTURAL FOOTER
+         ===================================================== -->
+    <footer class="site-footer" aria-label="Rodapé Institucional">
+      <div class="footer-inner">
+
+        <!-- Top Newsletter & Market Report Row -->
+        <div class="footer-top-row">
+          <div class="footer-newsletter-copy">
+            <span class="footer-kicker">RELATÓRIO TRIMESTRAL DE MERCADO</span>
+            <h2 class="footer-headline">RECEBA ANÁLISES DE VALORIZAÇÃO E IMÓVEIS OFF-MARKET ANTES DO LANÇAMENTO.</h2>
+          </div>
+          <form class="footer-newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="SEU MELHOR E-MAIL" aria-label="Seu melhor e-mail" required />
+            <button type="submit">INSCREVER ↗</button>
+          </form>
+        </div>
+
+        <!-- Middle 4-Column Navigation & Offices Grid -->
+        <div class="footer-links-grid">
+          <div class="footer-col-brand">
+            <a href="#inicio" class="footer-logo">
+              <svg width="24" height="24" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 3.2L4 12.2V24.5H17.5V17.5H24V24.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
+                <path d="M17.5 24.5H24V12.2L14 3.2" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
+              </svg>
+              <span>CITY ARCADE</span>
+            </a>
+            <p class="footer-brand-desc">
+              PLATAFORMA BRASILEIRA DE IMÓVEIS ARQUITETÔNICOS DE VANGUARDA, RESIDÊNCIAS MODULARES E INTELIGÊNCIA PATRIMONIAL.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-col-title">NAVEGAÇÃO</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#inicio">INÍCIO</a></li>
+              <li><a href="#imoveis">ACERVO DE IMÓVEIS</a></li>
+              <li><a href="#comprar">COMPRAR PROPRIEDADE</a></li>
+              <li><a href="#alugar">SIMULADOR &amp; LOCAÇÃO</a></li>
+              <li><a href="#corretores">PRIVATE ADVISORS</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-col-title">CIDADES &amp; HUBS</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#imoveis">SÃO PAULO · JARDINS &amp; ITAIM</a></li>
+              <li><a href="#imoveis">RIO DE JANEIRO · JOÁ &amp; LEBLON</a></li>
+              <li><a href="#imoveis">FLORIANÓPOLIS · JURERÊ</a></li>
+              <li><a href="#imoveis">CURITIBA · BATEL</a></li>
+              <li><a href="#imoveis">BRASÍLIA · LAGO SUL</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="footer-col-title">PRIVATE DESK</h3>
+            <ul class="footer-nav-list">
+              <li>AV. BRIG. FARIA LIMA, 4300 · SP</li>
+              <li>+55 (11) 3900-8800</li>
+              <li>PRIVATE@CITYARCADE.COM.BR</li>
+              <li>ATENDIMENTO 24/7 COM HORA MARCADA</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Giant Architectural Typographic Monument -->
+        <div class="footer-monument" aria-hidden="true">CITY ARCADE</div>
+
+        <!-- Bottom Legal & Back-to-Top Bar -->
+        <div class="footer-bottom-bar">
+          <div class="footer-legal">
+            <span>© 2026 CITY ARCADE IMÓVEIS DE VANGUARDA LTDA. TODOS OS DIREITOS RESERVADOS. CRECI-SP 042890-J.</span>
+          </div>
+          <div class="footer-bottom-actions">
+            <a href="#inicio" class="back-to-top-pill" id="backToTopBtn">VOLTAR AO TOPO ↑</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div>
+
+  <!-- =====================================================
+       INTERACTIVE PROPERTY SEARCH, DOSSIER & SIGN-IN MODAL
+       ===================================================== -->
+  <div class="modal-backdrop" id="interactiveModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <span class="modal-kicker" id="modalKicker">BUSCA INSTANTÂNEA DE IMÓVEIS</span>
+        <button type="button" class="modal-close" id="closeModalBtn" aria-label="Fechar janela">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamically populated in PT-BR -->
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Main Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
